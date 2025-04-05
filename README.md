@@ -1,83 +1,78 @@
 # Cancer Detection System
 
-A deep learning-based web application for early detection of cancer through medical image analysis.
+A deep learning web application for cancer detection from medical images.
 
-## Overview
+## Project Overview
 
-This application uses a trained neural network to analyze medical images and determine whether they contain signs of cancer. The system provides a user-friendly web interface built with Flask, allowing users to upload and analyze medical images.
+This application uses a trained convolutional neural network (CNN) to analyze medical images and detect signs of cancer. The system provides:
+
+- An intuitive web interface for uploading medical images
+- Real-time analysis and prediction
+- Confidence scores for predictions
+- Dark mode UI with responsive design
 
 ## Features
 
-- User-friendly web interface with drag-and-drop functionality
-- Real-time image analysis with deep learning
-- Clear visualization of results with confidence scores
-- Responsive design that works on desktop and mobile devices
-- Dark mode UI for reduced eye strain in clinical environments
+- **User-friendly Interface**: Simple drag-and-drop or click-to-upload functionality
+- **Real-time Analysis**: Quick processing and display of results
+- **Confidence Scoring**: Displays the model's confidence in its prediction
+- **Medical Disclaimer**: Reminds users that this is a screening tool, not a replacement for professional medical diagnosis
 
-## Technologies Used
+## Technology Stack
 
-- **Flask**: Web framework for the application
-- **TensorFlow/Keras**: Deep learning framework for the cancer detection model
-- **Bootstrap**: Frontend framework for responsive design
-- **HTML/CSS/JavaScript**: Frontend web development
+- **Backend**: Python, Flask
+- **Machine Learning**: TensorFlow/Keras
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
+- **UI Components**: Font Awesome, Google Fonts
 
 ## Installation
 
-1. Clone the repository
-```bash
-git clone https://github.com/your-username/cancer-detection-system.git
-cd cancer-detection-system
-```
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/cancer-detection-system.git
+   cd cancer-detection-system
+   ```
 
-2. Create a virtual environment (recommended)
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-```
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-3. Install the required dependencies
-```bash
-pip install -r requirements.txt
-```
+3. Run the application:
+   ```
+   python app.py
+   ```
 
-4. Run the application
-```bash
-python app.py
-```
+4. Open a browser and navigate to:
+   ```
+   http://localhost:5000
+   ```
 
-5. Open your browser and navigate to http://127.0.0.1:5000/
+## Usage
 
-## Model Information
+1. Access the web interface
+2. Upload a medical image using drag-and-drop or file selection
+3. Click "Analyze Image" to process
+4. View the prediction results and confidence score
 
-The system uses a convolutional neural network trained on medical images to classify them as either showing signs of cancer or being cancer-free. The model has been trained on a dataset of medical images and achieves high accuracy in preliminary testing.
+## Dataset
 
-Note: This tool is meant for screening purposes only and does not replace professional medical advice.
+The model was trained on a dataset with two classes:
+- **Class 1**: Normal tissue images
+- **Class 2**: Cancer tissue images
 
-## Directory Structure
+## Model
 
-```
-├── app.py                 # Main application file
-├── model.h5               # Trained neural network model
-├── requirements.txt       # Project dependencies
-├── train_model.py         # Script used to train the model
-├── dataset/               # Training and test datasets
-│   ├── test/
-│   └── train/
-├── static/                # Static files (CSS, uploads)
-│   ├── index.css
-│   └── uploads/
-└── templates/             # HTML templates
-    └── index.html
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+The model (`model.h5`) is a pre-trained convolutional neural network. It was trained on the included dataset using the `train_model.py` script.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Author
+
+Developed by Tanish
+
 ## Disclaimer
 
-This application is intended for educational and research purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+This application is intended for educational and demonstration purposes only. It should not be used for actual medical diagnosis. Always consult healthcare professionals for medical advice and diagnosis.

@@ -1,62 +1,34 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
+
+# Distribution / packaging
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
+build/
 *.egg-info/
-.installed.cfg
-*.egg
 
-# Virtual Environment
+# Virtual environments
 venv/
-ENV/
 env/
+ENV/
 
-# Flask
-instance/
-.webassets-cache
+# IDE specific files
+.idea/
+.vscode/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# TensorFlow model cache
-.keras/
-
-# PyCharm
-.idea/
-
-# VS Code
-.vscode/
-
-# Logs
+# Model checkpoints and logs
 logs/
-*.log
 
-# Local development settings
-.env
-
-# Static image uploads (except example images)
+# Uploaded images - keep the directory but ignore the files
 static/uploads/*
+!static/uploads/.gitkeep
+
+# Except the .gitkeep file
 !static/uploads/.gitkeep
 
 # OS specific files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
