@@ -28,17 +28,20 @@ This application uses a trained convolutional neural network (CNN) to analyze me
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/cancer-detection-system.git
    cd cancer-detection-system
    ```
 
 2. Install dependencies:
+
    ```
    pip install -r requirements.txt
    ```
 
 3. Run the application:
+
    ```
    python app.py
    ```
@@ -58,6 +61,7 @@ This application uses a trained convolutional neural network (CNN) to analyze me
 ## Dataset
 
 The model was trained on a dataset with two classes:
+
 - **Class 1**: Normal tissue images
 - **Class 2**: Cancer tissue images
 
