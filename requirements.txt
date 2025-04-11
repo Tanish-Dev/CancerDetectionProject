@@ -1,7 +1,7 @@
 flask==2.2.2  # Web framework
-tensorflow==2.9.1  # For loading .h5 model
+tensorflow==2.15.0  # For loading .h5 model (updated to available version)
 numpy==1.23.1  # Numerical computations
 pandas==1.4.3  # Data handling (if needed)
-opencv-python==4.5.5.62  # Image processing 
+opencv-python-headless==4.5.5.62  # Image processing (headless version for server deployment)
 pillow==9.2.0  # Image handling in Python
 gunicorn==20.1.0  # Production WSGI server for deployment

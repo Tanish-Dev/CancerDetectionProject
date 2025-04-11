@@ -5,7 +5,7 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn -c gunicorn.conf.py app:app
-    plan: free
+    plan: standard # Using standard plan for ML applications
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.7
@@ -14,3 +14,8 @@ services:
       - key: FLASK_ENV
         value: production
     autoDeploy: true
+    # Resource configuration to handle ML model
+    disk:
+      name: model-storage
+      mountPath: /opt/render/project/src/model-storage
+      sizeGB: 1
