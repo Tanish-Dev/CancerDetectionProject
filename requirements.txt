@@ -1,4 +1,5 @@
 flask==2.2.2  # Web framework
+werkzeug==2.2.3  # Added specific version compatible with Flask 2.2.2
 tensorflow-cpu==2.12.0  # Updated to the latest compatible version
 numpy>=1.21,<1.24  # Adjusted numpy version range for compatibility
 pandas==1.3.5  # Adjusted for compatibility
