@@ -14,7 +14,8 @@ except ImportError:
     sys.exit(1)
 
 app = Flask(__name__)
-app.secret_key = 'cancer_detection_secret_key'
+# Use environment variable for secret key or fallback to a secure default
+app.secret_key = os.environ.get('SECRET_KEY', 'cancer_detection_secret_key_20a4d925a8950')
 
 # Create upload folder if it doesn't exist
 UPLOAD_FOLDER = "static/uploads"
@@ -91,12 +92,16 @@ def upload_file():
 
 @app.route("/shutdown", methods=["POST"])
 def shutdown():
-    # Shutdown the server
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
-    func()
-    return "Server shutting down..."
+    # Only allow shutdown in development mode
+    if os.environ.get('FLASK_ENV') != 'production':
+        func = request.environ.get('werkzeug.server.shutdown')
+        if func is None:
+            raise RuntimeError('Not running with the Werkzeug Server')
+        func()
+        return "Server shutting down..."
+    return "Shutdown not available in production", 403
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use environment variables for configuration or fall back to defaults
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=debug_mode)
