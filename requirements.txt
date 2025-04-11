@@ -1,7 +1,7 @@
 flask==2.2.2  # Web framework
 tensorflow-cpu==2.12.0  # Lighter CPU version of TensorFlow
-numpy==1.21.6  # Compatible with TensorFlow 2.12.0
+numpy==1.21  # Compatible with TensorFlow 2.12.0
 pandas==1.3.5  # Adjusted for compatibility
 opencv-python-headless==4.5.5.64  # Image processing (headless version for server deployment)
-pillow==9.2.0  # Image handling in Python
-gunicorn==20.1.0  # Production WSGI server for deployment
+pillow==9.3.0  # Updated to the latest version
+gunicorn==20.1.1  # Updated to the latest version for production WSGI server
